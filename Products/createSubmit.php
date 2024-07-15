@@ -1,0 +1,38 @@
+<?php
+require "script.php";
+$db = new Database();
+
+try {
+
+    $reference = $_POST['reference'];
+    $img = $_POST['img'];
+    $prix = $_POST['prix'];
+    $quantite = $_POST['quantite'];
+    $description = $_POST['description'];
+    $fabricant = $_POST['fabricant'];
+    $type = $_POST['type'];
+
+
+    $sql = "INSERT INTO medicaments (reference, img, prix, quantite, description, fabricant, type, derniere_modification, creation)
+            VALUES (:reference, :img, :prix, :quantite, :description, :fabricant, :type, NOW(), NOW())";
+
+    $stmt = $db->pdo->prepare($sql);
+
+
+    $stmt->execute([
+        'reference' => $reference,
+        'img' => $img,
+        'prix' => $prix,
+        'quantite' => $quantite,
+        'description' => $description,
+        'fabricant' => $fabricant,
+        'type' => $type
+    ]);
+
+    header("Location: products.php?action=create_success");
+} catch (PDOException $e) {
+
+    header("Location: products.php?action=error");
+
+}
+?>
