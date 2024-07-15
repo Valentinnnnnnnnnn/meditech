@@ -1,4 +1,9 @@
 <?php
+session_start ();
+if (!isset($_SESSION['email']) or !isset($_SESSION['pass'])) {
+    header("Location: ../Login/login.php");
+}
+
 $host = '127.0.0.1';
 $db   = 'meditech';
 $user = 'root';

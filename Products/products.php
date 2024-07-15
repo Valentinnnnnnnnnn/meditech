@@ -2,6 +2,12 @@
 <link rel="stylesheet" href="style.css"/>
 
 <?php
+
+    session_start ();
+    if (!isset($_SESSION['email']) or !isset($_SESSION['pass'])) {
+        header("Location: ../Login/login.php");
+    }
+
     require "script.php";
     $db = new Database();
 
@@ -38,7 +44,7 @@
                     <div class="menu-items">
                         <li><a href="../Dashboard/dashboard.php">Dashboard</a></li>
                         <li><a href="products.php">Products</a></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="../logout.php">Logout</a></li>
                     </div>
                 </div>
             </div>

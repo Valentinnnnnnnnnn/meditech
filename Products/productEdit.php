@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 require "script.php";
 
 $db = new Database();

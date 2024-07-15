@@ -1,5 +1,11 @@
-<!DOCTYPE html>
+<?php
+session_start ();
+if (!isset($_SESSION['email']) or !isset($_SESSION['pass'])) {
+    header("Location: ../Login/login.php");
+}
+?>
 
+<!DOCTYPE html>
 <link href="style.css" rel="stylesheet" />
 
 <html>
@@ -16,7 +22,7 @@
                 <div class="menu-items">
                     <li><a href="dashboard.php">Dashboard</a></li>
                     <li><a href="../Products/products.php">Products</a></li>
-                    <li><a href="#">Logout</a></li>
+                    <li><a href="../logout.php">Logout</a></li>
                 </div>
             </div>
         </div>
