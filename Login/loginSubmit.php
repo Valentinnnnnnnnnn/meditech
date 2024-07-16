@@ -1,21 +1,38 @@
 <?php
-
-$email_valide = "admin";
-$pass_valide = "admin";
+session_start();
 
 if (isset($_GET['email']) && isset($_GET['pass'])) {
+    // Récupérez les identifiants saisis
+    $email = $_GET['email'];
+    $pass = $_GET['pass'];
 
-    if ($email_valide == $_GET['email'] && $pass_valide == $_GET['pass']) {
+    // Connexion à la base de données
+    require_once('../script.php'); // Inclusion du script de connexion à la base de données
 
-        session_start ();
+    $db = new Database();
 
-        $_SESSION['email'] = $_GET['email'];
-        $_SESSION['pass'] = $_GET['pass'];
+    // Requête pour vérifier les identifiants dans la base de données
+    $sql = "SELECT * FROM utilisateurs WHERE identifiant = :email LIMIT 1";
+    $stmt = $db->pdo->prepare($sql);
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        header ('location: ../Dashboard/dashboard.php');
+    if ($user && password_verify($pass, $user['mot_de_passe'])) {
+        // Authentification réussie
+        $_SESSION['email'] = $email;
+        $_SESSION['pass'] = $pass;
+
+        header('Location: ../Dashboard/dashboard.php');
+        exit();
     } else {
-        header("Location: login.php?error=true");
+        // Identifiants invalides
+        header('Location: login.php?error=true');
+        exit();
     }
 } else {
-    header("Location: login.php?error=true");
+    // Paramètres manquants
+    header('Location: login.php?error=true');
+    exit();
 }
+?>
