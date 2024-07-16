@@ -10,7 +10,6 @@
 
     require "script.php";
     $db = new Database();
-    var_dump($db);
 
     if (isset($_GET['action'])) { // afficher un message d'erreur/de succès lors de la redirection vers cette page
         $action = $_GET['action'];
