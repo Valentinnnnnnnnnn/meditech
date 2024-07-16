@@ -23,10 +23,10 @@
         <form action="Signup/signupSubmit.php" class="form" method="post">
             <input type="text" placeholder="Identifiant" class="pass">
             <input type="password" placeholder="Mot de passe" class="confirm_pass">
-        </form>
-
+            
             <!-- BOUTTON SIGNUP -->
             <button type="submit" class="login_btn">Signup</button>
+        </form>
     </div>
 
 </body>
