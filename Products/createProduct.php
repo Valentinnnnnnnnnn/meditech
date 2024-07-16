@@ -126,7 +126,6 @@ $db = new Database();
         }
         .main-img img {
             display: block;
-            border: .5px solid #ddd;
             border-radius: 2px;
             padding: 60px 30px;
             width: 390px;
