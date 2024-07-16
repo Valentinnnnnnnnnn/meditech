@@ -20,7 +20,7 @@
         </div>
 
             <!-- FORMULAIRE -->
-        <form action="signupSubmit.php" class="form" method="post">
+        <form action="Signup/signupSubmit.php" class="form" method="post">
             <input type="text" placeholder="Identifiant" class="pass">
             <input type="password" placeholder="Mot de passe" class="confirm_pass">
         </form>
