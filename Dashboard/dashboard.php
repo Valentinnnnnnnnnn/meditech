@@ -36,13 +36,42 @@ if (!isset($_SESSION['email']) or !isset($_SESSION['pass'])) {
             </div>
             <div class="info">
                 <span class="count">520</span>
-                <span class="label">Doctors</span>
+                <span class="label">Produits</span>
             </div>
         </div>
-        <div class="box2"></div>
-        <div class="box3"></div>
-        <div class="box4"></div>
-    </div>
+
+        <div class="box2 card">
+            <div class="icon">
+                <img src="../imgs/default.jpg">
+            </div>
+            <div class="info">
+                <span class="count">520</span>
+                <span class="label">En stock</span>
+            </div>
+        </div>
+
+        <div class="box3 card">
+            <div class="icon">
+                <img src="../imgs/default.jpg">
+            </div>
+            <div class="info">
+                <span class="count">520</span>
+                <span class="label">Fabriquants</span>
+            </div>
+        </div>
+
+        <div class="box4 card">
+            <div class="icon">
+                <img src="../imgs/default.jpg">
+            </div>
+            <div class="info">
+                <span class="count">520</span>
+                <span class="label">Types</span>
+            </div>
+        </div>
+
+
+
     
     </body>
 </html>
