@@ -101,7 +101,7 @@
     .navbar .menu-items {
         padding-top: 100px;
         height: 100vh;
-        width: 75%;
+        width: 50%;
         transform: translate(-150%);
         display: flex;
         flex-direction: column;
