@@ -24,7 +24,6 @@ $db = new Database();
             height: 100%;
         }
         body {
-            background: url('http://www.designkorner.com/dk-administrator/prod_images/Ecommerce-web-design5.jpg') no-repeat;
             background-size: cover;
             font-family: 'Droid Sans', sans-serif;
         }
@@ -84,10 +83,10 @@ $db = new Database();
             padding: 10px 20px;
             margin-right: 10px;
             cursor: pointer;
-            background-color: #fd7064;
+            background: linear-gradient(90deg, #003A74, #006AD5);
             color: #fff;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             transition: background-color 0.3s ease;
             width: 100%;
             text-transform: uppercase;
