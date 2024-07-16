@@ -71,8 +71,9 @@ $db = new Database();
                 <span class="label">Types</span>
             </div>
         </div>
+    </div>    
 
-        <div class="events-container">
+    <div class="events-container">
             <?php
             $events = [
                 ["id" => 1, "auteur" => "Jean", "date" => "2024-07-16 14:30:00", "action" => "création", "target" => "médicament Tsitsi"],
