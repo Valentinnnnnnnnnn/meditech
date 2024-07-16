@@ -147,9 +147,7 @@ $db = new Database();
             margin-right: 0;
         }
         .main-img img:hover,
-        .additional-img img:hover {
-            box-shadow: 0 0 6px #ddd;
-        }
+
     </style>
 </head>
 <body>
