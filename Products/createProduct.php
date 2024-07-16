@@ -12,7 +12,6 @@ $db = new Database();
 <head>
     <meta charset="UTF-8">
     <title>Ajouter un médicament</title>
-    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -159,13 +158,7 @@ $db = new Database();
 <div class="shop-bg"></div>
 <div class="pop-up clearfix">
     <div class="pics">
-        <span class="main-img"><img src=></span>
-        <div class="additional-img">
-            <img src="../imgs/default.jpg">
-            <img src="../imgs/default.jpg">
-            <img src="../imgs/default.jpg">
-            <img src="../imgs/default.jpg">
-        </div>
+        <span class="main-img"><img src="../imgs/default.jpg"></span>
     </div>
     <div class="container">
         <h2>Ajouter un médicament</h2>
