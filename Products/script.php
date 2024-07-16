@@ -6,10 +6,10 @@ if (!isset($_SESSION['email']) or !isset($_SESSION['pass'])) {
 
 class Database
 {
-    public $host = '127.0.0.1';
+    public $host = '89.168.44.77';
     public $db = 'meditech';
-    public $user = 'root';
-    public $pass = '';
+    public $user = 'user';
+    public $pass = 'Azerty1234';
     public $charset = 'utf8mb4';
     public $pdo;
 
@@ -31,7 +31,7 @@ class Database
 
     public function getAllMedicaments()
     {
-        $sql = "SELECT id, reference, img, creation, prix, derniere_modification, quantite FROM medicaments";
+        $sql = "SELECT id, reference, img, creation, prix, derniere_modification, quantite FROM medicaments;";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll();
