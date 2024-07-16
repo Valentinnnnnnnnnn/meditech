@@ -338,3 +338,7 @@ td {
     margin: 0;
     font-weight: bold;
 }
+.container > div {
+
+    border-radius: 10px;
+}
