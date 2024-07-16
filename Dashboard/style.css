@@ -10,10 +10,6 @@
         font-family: "Poppins", sans-serif;
     }
 
-    .container {
-        width: 20%;
-
-    }
 
     .navbar {
         width: 100%;
@@ -28,6 +24,7 @@
         justify-content: left;
         align-items: center;
         height: 62px;
+        width: 20%;
     }
 
 
