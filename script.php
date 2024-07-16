@@ -17,6 +17,10 @@ class Database
         $this->pass = getenv('DB_PASS');
         $this->charset = getenv('DB_CHARSET');
 
+        error_log("DB_HOST: " . $this->host);
+        error_log("DB_NAME: " . $this->db);
+        error_log("DB_USER: " . $this->user);
+
         $dsn = "mysql:host={$this->host};dbname={$this->db};charset={$this->charset}";
         $options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
