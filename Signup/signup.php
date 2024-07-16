@@ -24,6 +24,11 @@
             <input type="text" placeholder="Identifiant" name="identifiant" class="pass" required>
             <input type="password" placeholder="Mot de passe" name="mot_de_passe" class="confirm_pass" required>
 
+            <!-- MESSAGE D'ERREUR -->
+            <?php if ($_GET["userexists"]) { ?>
+                <p style="color:red; margin-top: 10px;">L'identifiant existe déjà.</p>
+            <?php } ?>
+
             <!-- BOUTTON SIGNUP -->
             <button type="submit" class="login_btn">Signup</button>
         </form>

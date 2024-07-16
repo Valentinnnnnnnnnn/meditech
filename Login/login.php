@@ -149,6 +149,9 @@ color: #5881D0;
               <?php if ($_GET["error"]) { ?>
                   <p style="color:red; margin-top: 10px;">Identifiant ou mot de passe incorrect.</p>
               <?php } ?>
+              <?php if ($_GET["signup"]) { ?>
+                  <p style="color:green; margin-top: 10px;">Compte créé avec succès.</p>
+              <?php } ?>
 
               <!-- BOUTTON LOGIN -->
               <button type="submit" class="login_btn">Login</button>

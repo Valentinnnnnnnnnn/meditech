@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt_insert->execute();
 
     // Redirection vers la page de connexion après l'inscription réussie
-    header('Location: ../Login/login.php?signup=success');
+    header('Location: ../Login/login.php?signup=true');
     exit();
 } else {
     // Redirection si le formulaire n'a pas été soumis via POST
