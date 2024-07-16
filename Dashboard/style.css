@@ -152,7 +152,7 @@
         grid-template-rows: repeat(2, 1fr);
         gap: 10px;
         width: 80%;
-        transform: translateX(12.5%);
+        transform: translate(12.5%, 30%);
     }
 
     .box1 {
@@ -211,3 +211,22 @@
         color: #666666;
     }
 
+    .events-container {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .event {
+        background-color: #ffffff;
+        margin: 10px 0;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .event p {
+        margin: 0;
+        font-size: 16px;
+        color: #333333;
+    }
