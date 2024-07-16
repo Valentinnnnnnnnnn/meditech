@@ -8,7 +8,7 @@
         header("Location: ../Login/login.php");
     }
 
-    require "script.php";
+    require "../script.php";
     $db = new Database();
 
     if (isset($_GET['action'])) { // afficher un message d'erreur/de succès lors de la redirection vers cette page

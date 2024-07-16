@@ -2,7 +2,7 @@
 
 session_start();
 
-require "script.php";
+require "../script.php";
 
 $db = new Database();
 
