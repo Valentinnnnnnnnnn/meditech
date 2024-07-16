@@ -41,6 +41,7 @@ $db = new Database();
             height: 100%;
             background: #222;
             opacity: .8;
+            background-image: url('../imgs/background.jpeg');
         }
         .pop-up {
             width: 900px;
