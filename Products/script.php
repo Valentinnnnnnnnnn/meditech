@@ -25,8 +25,6 @@ class Database
         try {
             $this->pdo = new PDO($dsn, $this->user, $this->pass, $options);
         } catch (\PDOException $e) {
-            phpinfo();
-            var_dump($e->getMessage());
             throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
     }
