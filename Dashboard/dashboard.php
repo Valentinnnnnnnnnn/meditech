@@ -29,6 +29,20 @@ if (!isset($_SESSION['email']) or !isset($_SESSION['pass'])) {
         </div>
     </nav>
 
+    <div class="container">
+        <div class="box1 card">
+            <div class="icon">
+                <img src="../imgs/default.jpg">
+            </div>
+            <div class="info">
+                <span class="count">520</span>
+                <span class="label">Doctors</span>
+            </div>
+        </div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+    </div>
     
     </body>
 </html>
