@@ -6,7 +6,7 @@ if (!isset($_SESSION['email']) or !isset($_SESSION['pass'])) {
 
 class Database
 {
-    public $host = '89.168.44.77';
+    public $host = '127.0.0.1';
     public $db = 'meditech';
     public $user = 'user';
     public $pass = 'Azerty1234';
