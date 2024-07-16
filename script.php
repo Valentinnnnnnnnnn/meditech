@@ -2,15 +2,21 @@
 
 class Database
 {
-    public $host = '127.0.0.1';
-    public $db = 'meditech';
-    public $user = 'user';
-    public $pass = 'Azerty1234';
-    public $charset = 'utf8mb4';
+    public $host;
+    public $db;
+    public $user;
+    public $pass;
+    public $charset;
     public $pdo;
 
     public function __construct()
     {
+        $this->host = getenv('DB_HOST');
+        $this->db = getenv('DB_NAME');
+        $this->user = getenv('DB_USER');
+        $this->pass = getenv('DB_PASS');
+        $this->charset = getenv('DB_CHARSET');
+
         $dsn = "mysql:host={$this->host};dbname={$this->db};charset={$this->charset}";
         $options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -32,6 +38,6 @@ class Database
         $stmt->execute();
         return $stmt->fetchAll();
     }
-    
+
 }
 
