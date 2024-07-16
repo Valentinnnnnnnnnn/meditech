@@ -10,10 +10,6 @@
         font-family: "Poppins", sans-serif;
     }
 
-    .container {
-        width: 20%;
-
-    }
 
     .navbar {
         width: 100%;
@@ -28,6 +24,7 @@
         justify-content: left;
         align-items: center;
         height: 62px;
+        width: 20%;
     }
 
 
@@ -151,41 +148,67 @@
 
     .container {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
         gap: 10px;
         width: 80%;
         height: 80%;
     }
 
-    .container > div {
-
-        border-radius: 10px;
-    }
-
     .box1 {
         grid-column: 1 / span 1;
         grid-row: 1 / span 1;
-        height: 100vh;
         background-color: red;
     }
 
     .box2 {
         grid-column: 2 / span 1;
         grid-row: 1 / span 1;
+        background-color: green;
     }
 
     .box3 {
-        grid-column: 3 / span 2;
-        grid-row: 1 / span 2;
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+        background-color: blue;
     }
 
     .box4 {
-        grid-column: 1 / span 2;
-        grid-row: 2 / span 3;
+        grid-column: 2 / span 1;
+        grid-row: 2 / span 1;
+        background-color: yellow;
     }
 
-    .box5 {
-        grid-column: 3 / span 2;
-        grid-row: 3 / span 2;
+    .card {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 200px;
+        justify-content: space-around;
     }
+
+    .icon img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .count {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333333;
+    }
+
+    .label {
+        font-size: 14px;
+        color: #666666;
+    }
+
