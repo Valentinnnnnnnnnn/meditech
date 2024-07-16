@@ -146,7 +146,7 @@ $db = new Database();
         .additional-img img:nth-child(4) {
             margin-right: 0;
         }
-        .main-img img:hover,
+
 
     </style>
 </head>
