@@ -107,6 +107,7 @@
         transition: transform 0.5s ease-in-out;
         text-align: center;
         background-color:rgb(255 255 255 / 90%);
+        border-radius: 10px;
     }
 
     .navbar .menu-items li {
