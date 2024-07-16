@@ -49,7 +49,7 @@ $db = new Database();
             margin-right: auto;
             margin-top: 80px;
             position: relative;
-            background: #918f8f;
+            background: #fff;
             padding: 30px;
             border-radius: 2px;
         }
