@@ -83,7 +83,7 @@ $db = new Database();
             padding: 10px 20px;
             margin-right: 10px;
             cursor: pointer;
-            background-color: #fd7064;
+            background: linear-gradient(90deg, #003A74, #006AD5);
             color: #fff;
             border: none;
             border-radius: 4px;
