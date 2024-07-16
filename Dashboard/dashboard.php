@@ -13,7 +13,7 @@ if (!isset($_SESSION['email']) or !isset($_SESSION['pass'])) {
     <body>
     <nav>
         <div class="navbar">
-            <div class="container nav-container">
+            <div class="nav-container">
                 <input class="checkbox" type="checkbox" name="" id="" />
                 <div class="hamburger-lines">
                     <span class="line line1"></span>

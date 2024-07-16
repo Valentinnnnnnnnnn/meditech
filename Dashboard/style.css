@@ -8,6 +8,7 @@
         background-repeat: no-repeat;
         background-attachment: fixed;
         font-family: "Poppins", sans-serif;
+        height: 100vh;
     }
 
 
@@ -152,7 +153,6 @@
         grid-template-rows: repeat(2, 1fr);
         gap: 10px;
         width: 80%;
-        height: 80%;
     }
 
     .box1 {
