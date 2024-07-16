@@ -11,11 +11,11 @@ class Database
 
     public function __construct()
     {
-        $this->host = getenv('DB_HOST') ?: '127.0.0.1';
-        $this->db = getenv('DB_NAME') ?: 'meditech';
-        $this->user = getenv('DB_USER') ?: 'user';
-        $this->pass = getenv('DB_PASS') ?: 'Azerty1234';
-        $this->charset = getenv('DB_CHARSET') ?: 'utf8mb4';
+        $this->host = getenv('DB_HOST');
+        $this->db = getenv('DB_NAME');
+        $this->user = getenv('DB_USER');
+        $this->pass = getenv('DB_PASS');
+        $this->charset = getenv('DB_CHARSET');
 
         $dsn = "mysql:host={$this->host};dbname={$this->db};charset={$this->charset}";
         $options = [
