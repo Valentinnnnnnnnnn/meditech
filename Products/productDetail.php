@@ -130,7 +130,7 @@ if (isset($_GET['productId'])) {
             display: block;
             margin-top: 10px;
         }
-    </style>
+        </style>
 </head>
 <body>
 
