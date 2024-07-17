@@ -73,7 +73,7 @@ if (isset($_GET['productId'])) {
             <input type="text" value="<?php echo htmlspecialchars($details['type']); ?>" readonly>
         </div>
         <div class="form-buttons-det">
-            <form action="productEdit.php" method="get">
+            <form action="productEdit.php" method="GET">
                 <input type="hidden" name="productId" value="<?php echo htmlspecialchars($details['id']); ?>">
                 <button type="submit">Modifier</button>
             </form>
