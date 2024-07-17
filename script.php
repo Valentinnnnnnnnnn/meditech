@@ -79,6 +79,8 @@ class Database
 
     public function deleteProduct($productId)
     {
+        session_start();
+
         $this->addEvent($_SESSION['email'], 'test1', '');
         $sql = "SELECT reference FROM medicaments WHERE id = :productId";
         $stmt = $this->pdo->prepare($sql);
