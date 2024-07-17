@@ -161,7 +161,7 @@ class Database
         if ($stmt->fetch()) {
             return false;
         }
-        $this->addEvent('test3', 'createAccount', '');
+
         $sql = "INSERT INTO utilisateurs (identifiant, mot_de_passe) VALUES (:identifiant, :mot_de_passe)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([

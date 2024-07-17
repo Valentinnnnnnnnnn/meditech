@@ -15,8 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Hash du mot de passe
-    $hashed_password = password_hash($mot_de_passe, PASSWORD_DEFAULT);
-
+    //$hashed_password = password_hash($mot_de_passe, PASSWORD_DEFAULT);
+    $hashed_password = $mot_de_passe;
     // Connexion à la base de données
     require_once('../script.php');
 
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     } catch (PDOException $e) {
         error_log('PDOException: ' . $e->getMessage(), 3, '/var/www/html/custom-error.log');
-        header('Location: signup.php?userexists=true');
+        header('Location: signup.php?server=true');
         exit();
     }
 
