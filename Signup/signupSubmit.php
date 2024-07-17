@@ -14,12 +14,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $hashed_password = password_hash($mot_de_passe, PASSWORD_DEFAULT);
 
     // Connexion à la base de données
-    require('../script.php');
+    require_once('../script.php');
 
     try {
         $db = new Database();
-        $loginSucces = $db->createAccount($identifiant, $hashed_password);
-        if ($loginSucces) {
+        $loginSuccess = $db->createAccount($identifiant, $hashed_password);
+
+        header('Location: signup.php?userexists=true');
+
+        if ($loginSuccess) {
             header('Location: ../Login/login.php?signup=true');
             exit();
         } else {
