@@ -17,7 +17,7 @@ Pour créer Meditech, on a utilisé un éditeur de code nommé phpStorm. On a au
 
 
 ## Comment j'ai organisé mon projet
-Dans mon projet Meditech, il y a plusieurs fichiers importants :
+Dans un premier temps, il y avait plusieurs fichiers importants :
 - `php/createProduct.php` : Cette page permet de créer un nouveau produit dans la base de données
 - `php/CreateSubmit.php` : Cette page traite les données soumises lors de la création d'un produit
 - `php/deleteProduct.php` : Cette page permet de supprimer un produit de la base de données
@@ -25,17 +25,15 @@ Dans mon projet Meditech, il y a plusieurs fichiers importants :
 - `php/productDetail.php` : Cette page affiche les détails d'un produit spécifique
 - `php/productEdit.php` : Cette page permet de modifier les informations d'un produit
 - `php/products.php` : Cette page affiche la liste des produits disponibles
-- `script.js` : Gestiond des clics sur les produits et des animations 
+- `script.js` : Gestion des clics sur les produits et des animations 
 - `php/script.php` : Gère la connexion avec la base de données
 
 
 ## Comment faire fonctionner Meditech sur ton ordinateur
-1. D'abord, il faut installer XAMPP sur l'ordinateur (via le lien ci-dessus)
+1. D'abord, il faut installer XAMPP sur l'ordinateur
 2. Ensuite, il faut copier tous les fichiers de notre projet dans le dossier `htdocs` de XAMPP
-3. Après, tu dois importer le fichier `database.sql` dans phpMyAdmin pour créer la base de données
-4. Enfin, tu ouvres ton navigateur web et tu vas sur `http://localhost/meditech` pour voir le site
-Voilà, c'est tout ! Maintenant, tu peux regarder comment j'ai fait mon site et même le modifier si tu veux !
-
+3. Après, il faut importer le fichier `database.sql` dans phpMyAdmin pour créer la base de données
+4. Enfin, il faut ouvrir un navigateur web et se rendre sur `http://localhost/meditech` pour voir le site
 
 ## Page darrivée du site : 
 Lorsque vous allez arriver sur la page d'accueil, on vous demande de vous connecter : soit vous avez déjà un identifiant et vous avez juste a rentrer votre identifiant et mot de passe, soit vous créer un compte. 
@@ -55,8 +53,6 @@ Semaine 2 :
 
 # Création d'une VM Oracle et configuration d'un environnement de développement PHP
 
-Ce README détaille les étapes pour créer une machine virtuelle (VM) sur Oracle Cloud Infrastructure (OCI), installer Apache, PHP, MySQL et configurer l'environnement pour développer en PHP. Ce guide est destiné aux étudiants en deuxième semaine de cours de PHP.
-
 ## Lundi : Création du compte Oracle, de la VM et connexion à GitHub
 
 ### 1. Création d'un compte Oracle Cloud
@@ -72,7 +68,6 @@ Ce README détaille les étapes pour créer une machine virtuelle (VM) sur Oracl
 - Cliquez sur "Créer une instance"
 - Sélectionnez l'image de système d'exploitation de votre choix (par exemple, Ubuntu)
 - Choisissez la taille de la VM en fonction de vos besoins (par exemple, VM.Standard.E2.1.Micro)
-- Configurez les options réseau et de stockage selon vos préférences
 - Cliquez sur "Créer" pour lancer la création de votre VM
 
 ### 3. Installation d'Apache et PHP
@@ -89,19 +84,16 @@ Ce README détaille les étapes pour créer une machine virtuelle (VM) sur Oracl
 - Créez un compte sur GitHub si vous n'en avez pas déjà un
 - Créez un nouveau repository sur GitHub pour votre projet
 - Clonez le repository sur votre ordinateur local en utilisant la commande : `git clone <url_du_repository>`
-- Configurez Git sur votre ordinateur local avec votre nom d'utilisateur et votre adresse e-mail
-- Effectuez des modifications sur votre projet en local et utilisez les commandes Git (`git add`, `git commit`, `git push`) pour synchroniser les changements avec le repository GitHub
+- Configurez Git sur votre ordinateur local avec une clé SSL
+- Effectuez des modifications sur votre projet en local et utilisez les commandes Git (`git add *`, `git commit`, `git push`) pour synchroniser les changements avec le repository GitHub
 
 ### 5. Utilisation de Termius pour synchroniser les modifications sur la VM
 
 - Installez Termius sur votre ordinateur local
-- Créez une nouvelle connexion SSH dans Termius en utilisant l'adresse IP publique de votre VM et vos identifiants de connexion
+- Créez une nouvelle connexion SSH dans Termius en utilisant l'adresse IP publique de votre VM et la clé de connexion fournie à la création.
 - Dans les paramètres de la connexion, ajoutez votre clé privée SSH pour l'authentification
 - Connectez-vous à votre VM via Termius
 - Clonez le repository GitHub sur votre VM en utilisant la commande : `git clone <url_du_repository>`
-- Effectuez des modifications sur votre projet directement sur la VM et utilisez les commandes Git pour synchroniser les changements avec le repository GitHub
-
-Note : Pour GitHub, vous devez ajouter votre clé publique SSH dans les paramètres de votre compte GitHub pour permettre l'authentification.
 
 ## Mardi : Installation de MySQL et configuration de l'environnement
 
@@ -116,12 +108,11 @@ Note : Pour GitHub, vous devez ajouter votre clé publique SSH dans les paramèt
 - Connectez-vous à MySQL en utilisant la commande : `mysql -u root -p`
 - Entrez le mot de passe root défini lors de l'installation
 - Créez une nouvelle base de données ou utilisez une base de données existante créée en local
-- Importez éventuellement les données de votre base de données locale vers la VM
+- Importez les données de votre base de données locale vers la VM
 
 ### 3. Configuration des variables d'environnement (optionnel)
 
-- Si nécessaire, modifiez les variables d'environnement PHP dans le fichier `/etc/php/7.4/apache2/php.ini` (le chemin peut varier selon la version de PHP)
-- Recherchez et modifiez les variables telles que `upload_max_filesize`, `post_max_size`, `memory_limit`, etc. selon vos besoins
+- Ajoutez des variables d'environnement PHP dans le fichier `/etc/php/7.4/apache2/php.ini` 
 - Redémarrez Apache après avoir effectué les modifications : `sudo systemctl restart apache2`
 
 ### 4. Configuration d'un Virtual Host (optionnel)
@@ -131,7 +122,3 @@ Note : Pour GitHub, vous devez ajouter votre clé publique SSH dans les paramèt
 - Configurez le Virtual Host en spécifiant le nom de domaine, le chemin vers les fichiers du site, etc.
 - Activez le Virtual Host avec la commande : `sudo a2ensite nom_du_fichier_de_configuration`
 - Redémarrez Apache : `sudo systemctl restart apache2`
-
-Votre environnement de développement PHP est maintenant prêt sur votre VM Oracle Cloud. Vous pouvez commencer à développer vos applications PHP et à les déployer sur cette VM.
-
-N'hésitez pas à consulter la documentation officielle d'Oracle Cloud, d'Apache, de PHP et de MySQL pour plus d'informations et d'options de configuration avancées.
