@@ -1,7 +1,7 @@
 <?php
 session_start ();
 
-require "../script.php";
+require "script.php";
 $db = new Database();
 
 if (isset($_SESSION['email']) or isset($_SESSION['pass'])) {
