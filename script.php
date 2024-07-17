@@ -156,7 +156,7 @@ class Database
         $stmt->execute([
             'identifiant' => $identifiant
         ]);
-        if ($stmt->fetch()) {
+        if (!$stmt->fetch()) {
             return false;
         }
 
