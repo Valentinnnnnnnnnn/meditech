@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     } catch (PDOException $e) {
         error_log('PDOException: ' . $e->getMessage(), 3, '/var/www/html/custom-error.log');
-        header('Location: signup.php?server=true');
+        header('Location: signup.php?userexists=true');
         exit();
     }
 
