@@ -75,15 +75,6 @@ $db = new Database();
 
     <div class="events-container">
             <?php
-            $events = [
-                ["id" => 1, "auteur" => "Jean", "date" => "2024-07-16 14:30:00", "action" => "create", "target" => "Tsitsi"],
-                ["id" => 2, "auteur" => "Marie", "date" => "2024-07-16 13:45:00", "action" => "delete", "target" => "Alpha"],
-                ["id" => 3, "auteur" => "Paul", "date" => "2024-07-16 12:00:00", "action" => "edit", "target" => "Beta"],
-                ["id" => 4, "auteur" => "Alice", "date" => "2024-07-16 15:00:00", "action" => "connected", "target" => ""],
-                ["id" => 5, "auteur" => "Bob", "date" => "2024-07-16 15:05:00", "action" => "disconnected", "target" => ""],
-                ["id" => 5, "auteur" => "Bob", "date" => "2024-07-16 15:05:00", "action" => "accountCreate", "target" => ""],
-            ];
-
             date_default_timezone_set('UTC'); // Set timezone if needed
             $now = new DateTime();
 
@@ -104,7 +95,7 @@ $db = new Database();
                 }
             }
 
-            foreach ($events as $event) {
+            foreach ($db->getLastEvents(15) as $event) {
                 $timeAgo = timeAgo($event["date"], $now);
                 $targetText = $event["target"] ? " le " . $event["target"] : "";
 
