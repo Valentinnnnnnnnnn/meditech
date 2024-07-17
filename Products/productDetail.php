@@ -25,7 +25,18 @@ if (isset($_GET['productId'])) {
 <head>
     <meta charset="UTF-8">
     <title>Détails du Médicament</title>
-
+    <style>
+        body { font-family: Arial, sans-serif; background-image: url('../imgs/background.jpeg');}
+        .container { width: 50%; margin: 50px auto; padding: 20px;border-radius: 20px; background: #ffffff17; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-weight: bold; }
+        .form-group input, .form-group textarea { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .form-group textarea { resize: vertical; }
+        .form-buttons-det { margin-top: 20px; text-align: center; }
+        .form-buttons-det form { display: inline-block; }
+        .form-buttons-det button { padding: 10px 20px; margin-right: 10px; cursor: pointer; background: linear-gradient(90deg, #003A74, #006AD5); color: #fff; border: none; border-radius: 8px; transition: background-color 0.3s ease; text-transform: uppercase; font-weight: bold; }
+        img { max-width: 100px; max-height: 100px; }
+    </style>
 </head>
 <body>
 
@@ -62,13 +73,13 @@ if (isset($_GET['productId'])) {
             <input type="text" value="<?php echo htmlspecialchars($details['type']); ?>" readonly>
         </div>
         <div class="form-buttons-det">
-            <form action="deleteProduct.php" method="POST">
-                <input type="hidden" name="productId" value="<?php echo htmlspecialchars($details['id']); ?>">
-                <button type="submit" class="deletebutton">Supprimer</button>
-            </form>
             <form action="productEdit.php" method="GET">
                 <input type="hidden" name="productId" value="<?php echo htmlspecialchars($details['id']); ?>">
-                <button type="submit">Modifier</button>
+                <button type="submit" class="editbutton">&#9998;</button>
+            </form>
+            <form action="deleteProduct.php" method="POST">
+                <input type="hidden" name="productId" value="<?php echo htmlspecialchars($details['id']); ?>">
+                <button type="submit" class="deletebutton">&#128465;</button>
             </form>
         </div>
     </form>
