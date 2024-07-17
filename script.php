@@ -176,7 +176,8 @@ class Database
         $sql = "COUNT(DISTINCT reference) AS total_produits,
                 SUM(quantite) AS stock_total,
                 COUNT(DISTINCT fabricant) AS total_fabricants,
-                COUNT(DISTINCT type) AS total_types";
+                COUNT(DISTINCT type) AS total_types
+                FROM medicaments";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
 
