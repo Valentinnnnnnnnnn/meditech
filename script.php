@@ -79,19 +79,18 @@ class Database
 
     public function deleteProduct($productId)
     {
-        session_start();
-
-        $this->addEvent($_SESSION['email'], 'test1', '');
+        $this->addEvent($_SESSION['email'], 'connected', '');
         $sql = "SELECT reference FROM medicaments WHERE id = :productId";
         $stmt = $this->pdo->prepare($sql);
-        $this->addEvent($_SESSION['email'], 'test2', '');
+        $this->addEvent($_SESSION['email'], 'connected', '');
         $stmt->execute([
             'productId' => $productId,
         ]);
 
-        //$product = $stmt->fetch(PDO::FETCH_ASSOC);
-        //$reference = $product['reference'];
-        $this->addEvent($_SESSION['email'], 'test3', '');
+        $product = $stmt->fetch();
+        var_dump($product);
+        $reference = $product['reference'];
+        $this->addEvent($_SESSION['email'], 'connected', '');
 
         $sql = "DELETE FROM medicaments WHERE id = :productId";
         $stmt = $this->pdo->prepare($sql);
