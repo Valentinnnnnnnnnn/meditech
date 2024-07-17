@@ -27,8 +27,8 @@ list($produits, $stock, $fabriquants, $types) = $db->getDashboardData();
                 </div>
                 <div class="menu-items">
                     <li><a href="dashboard.php">Dashboard</a></li>
-                    <li><a href="../Products/products.php">Products</a></li>
-                    <li><a href="../logout.php">Logout</a></li>
+                    <li><a href="Products/products.php">Products</a></li>
+                    <li><a href="logout.php">Logout</a></li>
                 </div>
             </div>
         </div>
@@ -37,7 +37,7 @@ list($produits, $stock, $fabriquants, $types) = $db->getDashboardData();
     <div class="container">
         <div class="box1 card">
             <div class="icon">
-                <img src="../imgs/default.jpg">
+                <img src="imgs/default.jpg">
             </div>
             <div class="info">
                 <span class="count"><?php echo $produits ?></span>
@@ -47,7 +47,7 @@ list($produits, $stock, $fabriquants, $types) = $db->getDashboardData();
 
         <div class="box2 card">
             <div class="icon">
-                <img src="../imgs/default.jpg">
+                <img src="imgs/default.jpg">
             </div>
             <div class="info">
                 <span class="count"><?php echo $stock ?></span>
@@ -57,7 +57,7 @@ list($produits, $stock, $fabriquants, $types) = $db->getDashboardData();
 
         <div class="box3 card">
             <div class="icon">
-                <img src="../imgs/default.jpg">
+                <img src="imgs/default.jpg">
             </div>
             <div class="info">
                 <span class="count"><?php echo $fabriquants ?></span>
@@ -67,7 +67,7 @@ list($produits, $stock, $fabriquants, $types) = $db->getDashboardData();
 
         <div class="box4 card">
             <div class="icon">
-                <img src="../imgs/default.jpg">
+                <img src="imgs/default.jpg">
             </div>
             <div class="info">
                 <span class="count"><?php echo $types ?></span>
