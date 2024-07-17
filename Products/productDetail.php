@@ -95,7 +95,7 @@ if (isset($_GET['productId'])) {
     <form action="deleteProduct.php" method="POST">
         <input type="hidden" name="productId" value="<?php echo htmlspecialchars($details['id']); ?>">
         <div class="form-buttons-det">
-        <button type="submit" class="deletebutton">&#128465;</button>
+        <button type="submit" class="deletebutton">Supprimer</button>
         </div>
     </form>
 </div>
