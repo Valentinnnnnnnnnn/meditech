@@ -41,3 +41,97 @@ Voilà, c'est tout ! Maintenant, tu peux regarder comment j'ai fait mon site et 
 Lorsque vous allez arriver sur la page d'accueil, on vous demande de vous connecter : soit vous avez déjà un identifiant et vous avez juste a rentrer votre identifiant et mot de passe, soit vous créer un compte. 
 
 ##
+
+
+
+
+
+
+
+
+
+
+Semaine 2 : 
+
+# Création d'une VM Oracle et configuration d'un environnement de développement PHP
+
+Ce README détaille les étapes pour créer une machine virtuelle (VM) sur Oracle Cloud Infrastructure (OCI), installer Apache, PHP, MySQL et configurer l'environnement pour développer en PHP. Ce guide est destiné aux étudiants en deuxième semaine de cours de PHP.
+
+## Lundi : Création du compte Oracle, de la VM et connexion à GitHub
+
+### 1. Création d'un compte Oracle Cloud
+
+- Rendez-vous sur le site d'Oracle Cloud : [https://www.oracle.com/cloud/](https://www.oracle.com/cloud/)
+- Cliquez sur "Essayez Oracle Cloud gratuitement"
+- Remplissez le formulaire d'inscription avec vos informations personnelles
+- Une fois votre compte créé, connectez-vous à la console Oracle Cloud
+
+### 2. Création de la VM
+
+- Dans la console Oracle Cloud, accédez à la section "Compute" et cliquez sur "Instances"
+- Cliquez sur "Créer une instance"
+- Sélectionnez l'image de système d'exploitation de votre choix (par exemple, Ubuntu)
+- Choisissez la taille de la VM en fonction de vos besoins (par exemple, VM.Standard.E2.1.Micro)
+- Configurez les options réseau et de stockage selon vos préférences
+- Cliquez sur "Créer" pour lancer la création de votre VM
+
+### 3. Installation d'Apache et PHP
+
+- Connectez-vous à votre VM en utilisant SSH
+- Mettez à jour les packages système avec la commande : `sudo apt update`
+- Installez Apache avec la commande : `sudo apt install apache2`
+- Vérifiez qu'Apache est bien installé en accédant à l'adresse IP publique de votre VM dans un navigateur web
+- Installez PHP avec la commande : `sudo apt install php libapache2-mod-php`
+- Redémarrez Apache avec la commande : `sudo systemctl restart apache2`
+
+### 4. Connexion à GitHub et synchronisation avec Git
+
+- Créez un compte sur GitHub si vous n'en avez pas déjà un
+- Créez un nouveau repository sur GitHub pour votre projet
+- Clonez le repository sur votre ordinateur local en utilisant la commande : `git clone <url_du_repository>`
+- Configurez Git sur votre ordinateur local avec votre nom d'utilisateur et votre adresse e-mail
+- Effectuez des modifications sur votre projet en local et utilisez les commandes Git (`git add`, `git commit`, `git push`) pour synchroniser les changements avec le repository GitHub
+
+### 5. Utilisation de Termius pour synchroniser les modifications sur la VM
+
+- Installez Termius sur votre ordinateur local
+- Créez une nouvelle connexion SSH dans Termius en utilisant l'adresse IP publique de votre VM et vos identifiants de connexion
+- Dans les paramètres de la connexion, ajoutez votre clé privée SSH pour l'authentification
+- Connectez-vous à votre VM via Termius
+- Clonez le repository GitHub sur votre VM en utilisant la commande : `git clone <url_du_repository>`
+- Effectuez des modifications sur votre projet directement sur la VM et utilisez les commandes Git pour synchroniser les changements avec le repository GitHub
+
+Note : Pour GitHub, vous devez ajouter votre clé publique SSH dans les paramètres de votre compte GitHub pour permettre l'authentification.
+
+## Mardi : Installation de MySQL et configuration de l'environnement
+
+### 1. Installation de MySQL
+
+- Installez MySQL avec la commande : `sudo apt install mysql-server`
+- Sécurisez l'installation de MySQL en exécutant le script : `sudo mysql_secure_installation`
+- Suivez les instructions à l'écran pour définir un mot de passe root et configurer les options de sécurité
+
+### 2. Connexion à la base de données créée en local
+
+- Connectez-vous à MySQL en utilisant la commande : `mysql -u root -p`
+- Entrez le mot de passe root défini lors de l'installation
+- Créez une nouvelle base de données ou utilisez une base de données existante créée en local
+- Importez éventuellement les données de votre base de données locale vers la VM
+
+### 3. Configuration des variables d'environnement (optionnel)
+
+- Si nécessaire, modifiez les variables d'environnement PHP dans le fichier `/etc/php/7.4/apache2/php.ini` (le chemin peut varier selon la version de PHP)
+- Recherchez et modifiez les variables telles que `upload_max_filesize`, `post_max_size`, `memory_limit`, etc. selon vos besoins
+- Redémarrez Apache après avoir effectué les modifications : `sudo systemctl restart apache2`
+
+### 4. Configuration d'un Virtual Host (optionnel)
+
+- Si vous souhaitez héberger plusieurs sites web sur votre VM, vous pouvez configurer des Virtual Hosts Apache
+- Créez un nouveau fichier de configuration dans `/etc/apache2/sites-available/` pour chaque site web
+- Configurez le Virtual Host en spécifiant le nom de domaine, le chemin vers les fichiers du site, etc.
+- Activez le Virtual Host avec la commande : `sudo a2ensite nom_du_fichier_de_configuration`
+- Redémarrez Apache : `sudo systemctl restart apache2`
+
+Votre environnement de développement PHP est maintenant prêt sur votre VM Oracle Cloud. Vous pouvez commencer à développer vos applications PHP et à les déployer sur cette VM.
+
+N'hésitez pas à consulter la documentation officielle d'Oracle Cloud, d'Apache, de PHP et de MySQL pour plus d'informations et d'options de configuration avancées.
