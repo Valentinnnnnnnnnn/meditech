@@ -88,6 +88,8 @@ class Database
         $product = $stmt->fetch(PDO::FETCH_ASSOC);
         $reference = $product['reference'];
 
+        $this->addEvent($_SESSION['email'], 'test', $reference);
+
         $sql = "DELETE FROM medicaments WHERE id = :productId";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([
