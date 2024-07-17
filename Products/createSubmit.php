@@ -18,21 +18,7 @@ try {
     $type = $_POST['type'];
 
 
-    $sql = "INSERT INTO medicaments (reference, img, prix, quantite, description, fabricant, type, derniere_modification, creation)
-            VALUES (:reference, :img, :prix, :quantite, :description, :fabricant, :type, NOW(), NOW())";
-
-    $stmt = $db->pdo->prepare($sql);
-
-
-    $stmt->execute([
-        'reference' => $reference,
-        'img' => $img,
-        'prix' => $prix,
-        'quantite' => $quantite,
-        'description' => $description,
-        'fabricant' => $fabricant,
-        'type' => $type
-    ]);
+    $db->createProduct(reference, img, prix, quantite, description, fabricant, type);
 
     header("Location: products.php?action=create_success");
 } catch (PDOException $e) {

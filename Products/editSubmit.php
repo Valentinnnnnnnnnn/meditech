@@ -5,9 +5,9 @@ if (!isset($_SESSION['email']) or !isset($_SESSION['pass'])) {
 }
 
 require "../script.php";
-$db = new Database();
 
 try {
+    $db = new Database();
 
     $productId = $_POST['productId'];
     $reference = $_POST['reference'];
@@ -18,33 +18,7 @@ try {
     $fabricant = $_POST['fabricant'];
     $type = $_POST['type'];
 
-
-
-    $sql = "UPDATE medicaments
-            SET reference = :reference,
-                img = :img,
-                prix = :prix,
-                quantite = :quantite,
-                description = :description,
-                fabricant = :fabricant,
-                type = :type,
-                derniere_modification = NOW()
-            WHERE id = :productId"; // TODO : edit la derniere modif
-
-
-
-    $stmt = $db->pdo->prepare($sql);
-    $stmt->execute([
-        'reference' => $reference,
-        'img' => $img,
-        'prix' => $prix,
-        'quantite' => $quantite,
-        'description' => $description,
-        'fabricant' => $fabricant,
-        'type' => $type,
-        'productId' => $productId
-    ]);
-
+    $db->editProduct($productId, $reference, $img, $prix, $quantite, $description, $fabricant, $type);
 
     header("Location: products.php?action=update_success");
 } catch (PDOException $e) {

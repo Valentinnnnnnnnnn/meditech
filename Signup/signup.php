@@ -28,6 +28,12 @@
             <?php if ($_GET["userexists"]) { ?>
                 <p style="color:red; margin-top: 10px;">L'identifiant existe déjà.</p>
             <?php } ?>
+            <?php if ($_GET["emptyfields"]) { ?>
+                <p style="color:red; margin-top: 10px;">Veuillez renseigner tous les champs.</p>
+            <?php } ?>
+            <?php if ($_GET["server"]) { ?>
+                <p style="color:red; margin-top: 10px;">Une erreur est survenue, veuillez contacter votre administrateur.</p>
+            <?php } ?>
 
             <!-- BOUTTON SIGNUP -->
             <button type="submit" class="login_btn">Signup</button>
