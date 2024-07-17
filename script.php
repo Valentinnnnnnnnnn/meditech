@@ -39,5 +39,13 @@ class Database
         return $stmt->fetchAll();
     }
 
+    public function getLastEvents($amount) {
+        $sql = "SELECT date, auteur, action, target FROM events ORDER BY date DESC LIMIT :amont;";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':amount', $amount);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
 }
 
