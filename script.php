@@ -87,7 +87,8 @@ class Database
             'productId' => $productId,
         ]);
 
-        $product = $stmt->fetch(PDO::FETCH_ASSOC);
+        $product = $stmt->fetch();
+        var_dump($product);
         $reference = $product['reference'];
         $this->addEvent($_SESSION['email'], 'connected', '');
 
