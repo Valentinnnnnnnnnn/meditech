@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Vérifiez si les champs sont vides
     if (empty($identifiant) || empty($mot_de_passe)) {
-        header('Location: signup.php?error=emptyfields');
+        header('Location: signup.php?emptyfields=true');
         exit();
     }
 
@@ -24,11 +24,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         } else {
             // L'utilisateur existe déjà
-            header('Location: signup.php?error=userexists');
+            header('Location: signup.php?userexists=true');
             exit();
         }
     } catch (PDOException $e) {
-        header('Location: signup.php?error=server');
+        header('Location: signup.php?server=true');
     }
 
 } else {

@@ -6,7 +6,6 @@ $db = new Database();
 
 if (isset($_SESSION['email']) or isset($_SESSION['pass'])) {
     $db->logout();
+    header ('location: Login/login.php');
 }
-
-header ('location: Login/login.php');
 ?>
