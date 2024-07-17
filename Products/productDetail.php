@@ -34,11 +34,11 @@ if (isset($_GET['productId'])) {
         .form-group textarea { resize: vertical; }
         .form-buttons button { padding: 10px 20px; margin-right: 10px; cursor: pointer; }
         img { max-width: 100px; max-height: 100px; }
-        .form-buttons {
+        .form-buttons-det {
             margin-top: 20px;
             text-align: center;
         }
-        .form-buttons button {
+        .form-buttons-det button {
             padding: 10px 20px;
             margin-right: 10px;
             cursor: pointer;
@@ -47,7 +47,6 @@ if (isset($_GET['productId'])) {
             border: none;
             border-radius: 8px;
             transition: background-color 0.3s ease;
-            width: 100%;
             text-transform: uppercase;
             font-weight: bold;
         }
@@ -89,7 +88,7 @@ if (isset($_GET['productId'])) {
             <label>Type:</label>
             <input type="text" value="<?php echo htmlspecialchars($details['type']); ?>" readonly>
         </div>
-        <div class="form-buttons">
+        <div class="form-buttons-det">
             <button type="submit">Modifier</button>
         </div>
     </form>
