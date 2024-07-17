@@ -72,6 +72,7 @@ if (isset($_GET['productId'])) {
             <label>Type:</label>
             <input type="text" value="<?php echo htmlspecialchars($details['type']); ?>" readonly>
         </div>
+    </form>
         <div class="form-buttons-det">
 
             <form action="productEdit.php" method="GET">
@@ -85,7 +86,7 @@ if (isset($_GET['productId'])) {
             </form>
 
         </div>
-    </form>
+
 </div>
 
 </body>
