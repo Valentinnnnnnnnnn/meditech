@@ -79,10 +79,10 @@ class Database
 
     public function deleteProduct($productId)
     {
-        $this->addEvent($_SESSION['email'], 'connected', '');
+        $this->addEvent('test1', 'connected', '');
         $sql = "SELECT reference FROM medicaments WHERE id = :productId";
         $stmt = $this->pdo->prepare($sql);
-        $this->addEvent($_SESSION['email'], 'connected', '');
+        $this->addEvent('test2', 'connected', '');
         $stmt->execute([
             'productId' => $productId,
         ]);
@@ -90,15 +90,17 @@ class Database
         $product = $stmt->fetch();
         var_dump($product);
         $reference = $product['reference'];
-        $this->addEvent($_SESSION['email'], 'connected', '');
+        $this->addEvent('test3', 'connected', '');
 
         $sql = "DELETE FROM medicaments WHERE id = :productId";
         $stmt = $this->pdo->prepare($sql);
+        $this->addEvent('test4', 'connected', '');
         $stmt->execute([
             'productID' => $productId,
         ]);
-
+        $this->addEvent('test5', 'connected', '');
         $this->addEvent($_SESSION['email'], 'delete', $reference);
+        $this->addEvent('test6', 'connected', '');
     }
 
     public function editProduct($productId, $reference, $img, $prix, $quantite, $description, $fabricant, $type)
