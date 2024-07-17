@@ -76,11 +76,12 @@ $db = new Database();
     <div class="events-container">
             <?php
             $events = [
-                ["id" => 1, "auteur" => "Jean", "date" => "2024-07-16 14:30:00", "action" => "création", "target" => "médicament Tsitsi"],
-                ["id" => 2, "auteur" => "Marie", "date" => "2024-07-16 13:45:00", "action" => "modification", "target" => "projet Alpha"],
-                ["id" => 3, "auteur" => "Paul", "date" => "2024-07-16 12:00:00", "action" => "suppression", "target" => "fichier Beta"],
-                ["id" => 4, "auteur" => "Alice", "date" => "2024-07-16 15:00:00", "action" => "s'est connecté", "target" => ""],
-                ["id" => 5, "auteur" => "Bob", "date" => "2024-07-16 15:05:00", "action" => "s'est déconnecté", "target" => ""],
+                ["id" => 1, "auteur" => "Jean", "date" => "2024-07-16 14:30:00", "action" => "create", "target" => "médicament Tsitsi"],
+                ["id" => 2, "auteur" => "Marie", "date" => "2024-07-16 13:45:00", "action" => "delete", "target" => "projet Alpha"],
+                ["id" => 3, "auteur" => "Paul", "date" => "2024-07-16 12:00:00", "action" => "edit", "target" => "fichier Beta"],
+                ["id" => 4, "auteur" => "Alice", "date" => "2024-07-16 15:00:00", "action" => "connected", "target" => ""],
+                ["id" => 5, "auteur" => "Bob", "date" => "2024-07-16 15:05:00", "action" => "disconnected", "target" => ""],
+                ["id" => 5, "auteur" => "Bob", "date" => "2024-07-16 15:05:00", "action" => "accountCreate", "target" => ""],
             ];
 
             date_default_timezone_set('UTC'); // Set timezone if needed
@@ -110,28 +111,32 @@ $db = new Database();
                 // Choisir le bon verbe en fonction de l'action
                 switch ($event["action"]) {
                     case "create":
-                        $actionText = "créé";
+                        $actionText = "a créé le médicament";
                         break;
                     case "delete":
-                        $actionText = "supprimé";
+                        $actionText = "a supprimé le médicament";
                         break;
                     case "edit":
-                        $actionText = "modifié";
+                        $actionText = "a modifié le médicament";
                         break;
                     case "connected":
                         $actionText = "s'est connecté";
-                        $targetText = ""; // Pas besoin de cible pour cette action
+                        $targetText = ""; // Pas besoin de cible
                         break;
                     case "disconnected":
                         $actionText = "s'est déconnecté";
-                        $targetText = ""; // Pas besoin de cible pour cette action
+                        $targetText = ""; // Pas besoin de cible
+                        break;
+                    case "accountCreate":
+                        $actionText = "a créé son compte";
+                        $targetText = ""; // Pas besoin de cible
                         break;
                     default:
                         $actionText = $event["action"]; // Utilise l'action telle quelle si non reconnue
                 }
 
                 echo '<div class="event">';
-                echo '<p>' . $timeAgo . ' - ' . $event["auteur"] . ' a ' . $actionText . $targetText . '</p>';
+                echo '<p>' . $timeAgo . ' - ' . $event["auteur"] .  $actionText . $targetText . '</p>';
                 echo '</div>';
             }
             ?>
