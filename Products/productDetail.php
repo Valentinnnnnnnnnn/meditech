@@ -71,7 +71,9 @@ if (isset($_GET['productId'])) {
             <label>Type:</label>
             <input type="text" value="<?php echo htmlspecialchars($details['type']); ?>" readonly>
         </div>
+        <div class="but-envoyer">
             <button type="submit">Modifier</button>
+        </div>
     </form>
     <form action="deleteProduct.php" method="POST">
         <input type="hidden" name="productId" value="<?php echo htmlspecialchars($details['id']); ?>">
