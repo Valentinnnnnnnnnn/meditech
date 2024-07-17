@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
         $db = new Database();
+        header('Location: signup.php?userexists=true');
         $loginSuccess = $db->createAccount($identifiant, $hashed_password);
 
         header('Location: signup.php?userexists=true');
