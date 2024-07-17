@@ -173,7 +173,8 @@ class Database
 
     public function getDashboardData()
     {
-        $sql = "COUNT(DISTINCT reference) AS total_produits,
+        $sql = "SELECT 
+                COUNT(DISTINCT reference) AS total_produits,
                 SUM(quantite) AS stock_total,
                 COUNT(DISTINCT fabricant) AS total_fabricants,
                 COUNT(DISTINCT type) AS total_types
