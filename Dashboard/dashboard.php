@@ -71,7 +71,7 @@ $db = new Database();
                 <span class="label">Types</span>
             </div>
         </div>
-    </div>    
+    </div>
 
     <div class="events-container">
             <?php
