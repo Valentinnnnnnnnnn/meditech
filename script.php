@@ -85,9 +85,9 @@ class Database
             'productId' => $productId,
         ]);
 
-        $product = $stmt->fetch(PDO::FETCH_ASSOC);
-        $reference = $product['reference'];
-
+        //$product = $stmt->fetch(PDO::FETCH_ASSOC);
+        //$reference = $product['reference'];
+        $reference = "test";
         $this->addEvent($_SESSION['email'], 'test', $reference);
 
         $sql = "DELETE FROM medicaments WHERE id = :productId";
