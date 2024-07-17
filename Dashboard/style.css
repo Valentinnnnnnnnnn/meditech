@@ -215,19 +215,23 @@
         width: 80%;
         box-sizing: border-box;
         transform: translate(12.5%, 70px);
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 10px;
+        height: 60%;
     }
 
     .event {
         background-color: rgba(255, 255, 255, 0.9);
-        margin: 10px 0 10px;
-        padding: 20px 0 20px 0;
+        margin: 5px 0 5px;
+        padding: 1px 0 1px 0;
         border-radius: 10px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         width: 100%;
     }
 
     .event p {
-        margin-left: 25px;
+        margin-left: 15px;
         font-size: 16px;
         color: #333333;
     }

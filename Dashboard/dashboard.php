@@ -89,25 +89,49 @@ $db = new Database();
             function timeAgo($datetime, $now) {
                 $interval = $now->diff(new DateTime($datetime));
                 if ($interval->y > 0) {
-                    return $interval->y . " year(s) ago";
+                    return "Il y a " . $interval->y . " an(s)";
                 } elseif ($interval->m > 0) {
-                    return $interval->m . " month(s) ago";
+                    return "Il y a " . $interval->m . " mois";
                 } elseif ($interval->d > 0) {
-                    return $interval->d . " day(s) ago";
+                    return "Il y a " . $interval->d . " jour(s)";
                 } elseif ($interval->h > 0) {
-                    return $interval->h . " hour(s) ago";
+                    return "Il y a " . $interval->h . " heure(s)";
                 } elseif ($interval->i > 0) {
-                    return $interval->i . " minute(s) ago";
+                    return "Il y a " . $interval->i . " minute(s)";
                 } else {
-                    return "just now";
+                    return "À l'instant";
                 }
             }
 
             foreach ($events as $event) {
                 $timeAgo = timeAgo($event["date"], $now);
                 $targetText = $event["target"] ? " le " . $event["target"] : "";
+
+                // Choisir le bon verbe en fonction de l'action
+                switch ($event["action"]) {
+                    case "create":
+                        $actionText = "créé";
+                        break;
+                    case "delete":
+                        $actionText = "supprimé";
+                        break;
+                    case "edit":
+                        $actionText = "modifié";
+                        break;
+                    case "connected":
+                        $actionText = "s'est connecté";
+                        $targetText = ""; // Pas besoin de cible pour cette action
+                        break;
+                    case "disconnected":
+                        $actionText = "s'est déconnecté";
+                        $targetText = ""; // Pas besoin de cible pour cette action
+                        break;
+                    default:
+                        $actionText = $event["action"]; // Utilise l'action telle quelle si non reconnue
+                }
+
                 echo '<div class="event">';
-                echo '<p>' . $timeAgo . ' - ' . $event["auteur"] . ' a ' . $event["action"] . $targetText . '</p>';
+                echo '<p>' . $timeAgo . ' - ' . $event["auteur"] . ' a ' . $actionText . $targetText . '</p>';
                 echo '</div>';
             }
             ?>
