@@ -17,23 +17,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require_once('../script.php');
 
     try {
-        header('Location: signup.php?userexists=true');
         $db = new Database();
-        header('Location: signup.php?userexists=true');
         $loginSuccess = $db->createAccount($identifiant, $hashed_password);
-
-        header('Location: signup.php?userexists=true');
 
         if ($loginSuccess) {
             header('Location: ../Login/login.php?signup=true');
-            exit();
         } else {
             // L'utilisateur existe déjà
             header('Location: signup.php?userexists=true');
-            exit();
         }
+        exit();
     } catch (PDOException $e) {
         header('Location: signup.php?server=true');
+        exit();
     }
 
 } else {
