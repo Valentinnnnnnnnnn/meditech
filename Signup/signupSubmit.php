@@ -18,8 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
         $db = new Database();
-        var_dump($db);
-        if ($db->createAccount($identifiant, $hashed_password)) {
+        $loginSucces = $db->createAccount($identifiant, $hashed_password);
+        if ($loginSucces) {
             header('Location: ../Login/login.php?signup=true');
             exit();
         } else {
