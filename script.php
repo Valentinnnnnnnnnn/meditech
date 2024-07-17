@@ -156,7 +156,7 @@ class Database
         $stmt->execute([
             'identifiant' => $identifiant
         ]);
-        if (!$stmt->fetch()) {
+        if ($stmt->fetch()) {
             return false;
         }
 
@@ -167,6 +167,8 @@ class Database
             'mot_de_passe' => $hashed_password
         ]);
         $this->addEvent($identifiant, 'accountCreate', '');
+
+        return true;
     }
 
 }
