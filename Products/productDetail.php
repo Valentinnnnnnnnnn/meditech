@@ -75,8 +75,12 @@ if (isset($_GET['productId'])) {
         <div class="form-buttons-det">
             <form action="productEdit.php" method="GET">
                 <input type="hidden" name="productId" value="<?php echo htmlspecialchars($details['id']); ?>">
-                <button type="submit">Modifier</button>
+                <button type="submit" class="deletebutton">Modifier</button>
             </form>
+            <!--<form action="productEdit.php" method="GET">
+                <input type="hidden" name="productId" value="<?php echo htmlspecialchars($details['id']); ?>">
+                <button type="submit">Modifier</button>
+            </form>-->
             <form action="deleteProduct.php" method="POST">
                 <input type="hidden" name="productId" value="<?php echo htmlspecialchars($details['id']); ?>">
                 <button type="submit" class="deletebutton">Supprimer</button>
