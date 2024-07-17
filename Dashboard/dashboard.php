@@ -6,6 +6,9 @@ if (!isset($_SESSION['email']) or !isset($_SESSION['pass'])) {
 }
 require "../script.php";
 $db = new Database();
+
+list($produits, $stock, $fabriquants, $types) = $db->getDashboardData();
+
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +40,7 @@ $db = new Database();
                 <img src="../imgs/default.jpg">
             </div>
             <div class="info">
-                <span class="count">520</span>
+                <span class="count"><?php $produits ?></span>
                 <span class="label">Produits</span>
             </div>
         </div>
@@ -47,7 +50,7 @@ $db = new Database();
                 <img src="../imgs/default.jpg">
             </div>
             <div class="info">
-                <span class="count">520</span>
+                <span class="count"><?php $stock ?></span>
                 <span class="label">En stock</span>
             </div>
         </div>
@@ -57,7 +60,7 @@ $db = new Database();
                 <img src="../imgs/default.jpg">
             </div>
             <div class="info">
-                <span class="count">520</span>
+                <span class="count"><?php $fabriquants ?></span>
                 <span class="label">Fabriquants</span>
             </div>
         </div>
@@ -67,7 +70,7 @@ $db = new Database();
                 <img src="../imgs/default.jpg">
             </div>
             <div class="info">
-                <span class="count">520</span>
+                <span class="count"><?php $types ?>></span>
                 <span class="label">Types</span>
             </div>
         </div>
@@ -97,7 +100,7 @@ $db = new Database();
 
             foreach ($db->getLastEvents(15) as $event) {
                 $timeAgo = timeAgo($event["date"], $now);
-                $targetText = $event["target"] ? " le " . $event["target"] : "";
+                $targetText = $event["target"];
 
                 // Choisir le bon verbe en fonction de l'action
                 switch ($event["action"]) {
