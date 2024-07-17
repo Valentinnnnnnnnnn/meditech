@@ -37,7 +37,7 @@ if (isset($_GET['productId'])) {
         .form-group input, .form-group textarea { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
         .form-group textarea { resize: vertical; }
         .form-buttons { margin-top: 20px; }
-        .form-buttons button { padding: 10px 20px; margin-right: 10px; cursor: pointer; }
+        .form-buttons-det button { padding: 10px 20px; margin-right: 10px; cursor: pointer; background: linear-gradient(90deg, #003A74, #006AD5); color: #fff; border: none; border-radius: 8px; transition: background-color 0.3s ease; text-transform: uppercase; font-weight: bold; }
         img { max-width: 100px; max-height: 100px; }
     </style>
 </head>
@@ -75,7 +75,7 @@ if (isset($_GET['productId'])) {
             <label>Type:</label>
             <input type="text" name="type" value="<?php echo htmlspecialchars($details['type']); ?>" required>
         </div>
-        <div class="form-buttons">
+        <div class="form-buttons-det">
             <button type="submit">Enregistrer les modifications</button>
         </div>
     </form>
