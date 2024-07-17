@@ -50,7 +50,7 @@ if (isset($_GET['productId'])) {
             text-transform: uppercase;
             font-weight: bold;
         }
-        .form-buttons-det form {
+        .form-buttons form {
             display: inline-block;
         }
 
