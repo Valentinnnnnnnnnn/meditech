@@ -79,8 +79,6 @@ class Database
 
     public function deleteProduct($productId)
     {
-        session_start();
-
         $this->addEvent($_SESSION['email'], 'test1', '');
         $sql = "SELECT reference FROM medicaments WHERE id = :productId";
         $stmt = $this->pdo->prepare($sql);
@@ -89,8 +87,8 @@ class Database
             'productId' => $productId,
         ]);
 
-        //$product = $stmt->fetch(PDO::FETCH_ASSOC);
-        //$reference = $product['reference'];
+        $product = $stmt->fetch(PDO::FETCH_ASSOC);
+        $reference = $product['reference'];
         $this->addEvent($_SESSION['email'], 'test3', '');
 
         $sql = "DELETE FROM medicaments WHERE id = :productId";
