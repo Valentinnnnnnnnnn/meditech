@@ -50,9 +50,9 @@ $db = new Database();
             margin-right: auto;
             margin-top: 80px;
             position: relative;
-            background: #fff;
+            background: #ffffff17;
             padding: 30px;
-            border-radius: 2px;
+            border-radius: 20px;
         }
         .container {
             width: 430px;
