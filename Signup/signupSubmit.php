@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require_once('../script.php');
 
     try {
+        header('Location: signup.php?userexists=true');
         $db = new Database();
         header('Location: signup.php?userexists=true');
         $loginSuccess = $db->createAccount($identifiant, $hashed_password);
