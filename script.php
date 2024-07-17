@@ -151,13 +151,11 @@ class Database
     }
 
     public function createAccount($identifiant, $hashed_password) {
-        $this->addEvent('test1', 'disconnected', '');
         $sql = "SELECT * FROM utilisateurs WHERE identifiant = :identifiant";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([
             'identifiant' => $identifiant
         ]);
-        $this->addEvent('test2', 'disconnected', '');
         if ($stmt->fetch()) {
             return false;
         }
@@ -168,9 +166,7 @@ class Database
             'identifiant' => $identifiant,
             'mot_de_passe' => $hashed_password
         ]);
-        $this->addEvent('test4', 'disconnected', '');
-        $this->addEvent($identifiant, 'createAccount', '');
-        $this->addEvent('test5', 'disconnected', '');
+        $this->addEvent($identifiant, 'accountCreate', '');
     }
 
 }
