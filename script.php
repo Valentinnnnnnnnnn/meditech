@@ -151,22 +151,26 @@ class Database
     }
 
     public function createAccount($identifiant, $hashed_password) {
+        $this->addEvent('test1', 'createAccount', '');
         $sql = "SELECT * FROM utilisateurs WHERE identifiant = :identifiant";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([
             'identifiant' => $identifiant
         ]);
+        $this->addEvent('test2', 'createAccount', '');
         if ($stmt->fetch()) {
             return false;
         }
-
+        $this->addEvent('test3', 'createAccount', '');
         $sql = "INSERT INTO utilisateurs (identifiant, mot_de_passe) VALUES (:identifiant, :mot_de_passe)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([
             'identifiant' => $identifiant,
             'mot_de_passe' => $hashed_password
         ]);
+        $this->addEvent('test4', 'createAccount', '');
         $this->addEvent($identifiant, 'createAccount', '');
+        $this->addEvent('test5', 'createAccount', '');
     }
 
 }

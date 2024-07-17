@@ -32,7 +32,7 @@
                 <p style="color:red; margin-top: 10px;">Veuillez renseigner tous les champs.</p>
             <?php } ?>
             <?php if ($_GET["server"]) { ?>
-                <p style="color:red; margin-top: 10px;">Une erreur est survenue, veuillez contacter votre administrateur.</p>
+                <p style="color:red; margin-top: 10px;">Une erreur est survenue<br>Veuillez contacter votre administrateur.</p>
             <?php } ?>
 
             <!-- BOUTTON SIGNUP -->
