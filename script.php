@@ -96,7 +96,7 @@ class Database
         $stmt = $this->pdo->prepare($sql);
         $this->addEvent('test4', 'connected', '');
         $stmt->execute([
-            'productID' => $productId,
+            'productId' => $productId,
         ]);
         $this->addEvent('test5', 'connected', '');
         $this->addEvent($_SESSION['email'], 'delete', $reference);
