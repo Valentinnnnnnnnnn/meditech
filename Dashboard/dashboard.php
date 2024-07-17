@@ -105,13 +105,13 @@ list($produits, $stock, $fabriquants, $types) = $db->getDashboardData();
                 // Choisir le bon verbe en fonction de l'action
                 switch ($event["action"]) {
                     case "create":
-                        $actionText = " a créé le médicament";
+                        $actionText = " a créé le médicament ";
                         break;
                     case "delete":
-                        $actionText = " a supprimé le médicament";
+                        $actionText = " a supprimé le médicament ";
                         break;
                     case "edit":
-                        $actionText = " a modifié le médicament";
+                        $actionText = " a modifié le médicament ";
                         break;
                     case "connected":
                         $actionText = " s'est connecté";
