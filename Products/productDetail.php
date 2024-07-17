@@ -73,14 +73,17 @@ if (isset($_GET['productId'])) {
             <input type="text" value="<?php echo htmlspecialchars($details['type']); ?>" readonly>
         </div>
         <div class="form-buttons-det">
+
             <form action="productEdit.php" method="GET">
                 <input type="hidden" name="productId" value="<?php echo htmlspecialchars($details['id']); ?>">
-                <button type="submit" class="editbutton">&#9998;</button>
+                <button type="submit">Modifier</button>
             </form>
+
             <form action="deleteProduct.php" method="POST">
                 <input type="hidden" name="productId" value="<?php echo htmlspecialchars($details['id']); ?>">
-                <button type="submit" class="deletebutton">&#128465;</button>
+                <button type="submit"">Supprimer</button>
             </form>
+
         </div>
     </form>
 </div>
