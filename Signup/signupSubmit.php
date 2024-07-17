@@ -15,8 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Hash du mot de passe
-    //$hashed_password = password_hash($mot_de_passe, PASSWORD_DEFAULT);
-    $hashed_password = $mot_de_passe;
+    $hashed_password = password_hash($mot_de_passe, PASSWORD_DEFAULT);
+
     // Connexion à la base de données
     require_once('../script.php');
 
