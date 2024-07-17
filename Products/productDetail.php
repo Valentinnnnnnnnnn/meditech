@@ -27,7 +27,7 @@ if (isset($_GET['productId'])) {
     <title>Détails du Médicament</title>
     <style>
         body { font-family: Arial, sans-serif; background-image: url('../imgs/background.jpeg');}
-        .container { width: 50%; margin: 50px auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; background-color: rgba(255, 255, 255) }
+        .container { width: 50%; margin: 50px auto; padding: 20px;border-radius: 20px; background: #ffffff17; }
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; font-weight: bold; }
         .form-group input, .form-group textarea { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
