@@ -39,6 +39,7 @@ if (isset($_GET['productId'])) {
         .form-buttons { margin-top: 20px; }
         .form-buttons-det button { padding: 10px 20px; margin-right: 10px; cursor: pointer; background: linear-gradient(90deg, #003A74, #006AD5); color: #fff; border: none; border-radius: 8px; transition: background-color 0.3s ease; text-transform: uppercase; font-weight: bold; }
         img { max-width: 100px; max-height: 100px; }
+        .form-buttons-det {text-align: center;}
     </style>
 </head>
 <body>
