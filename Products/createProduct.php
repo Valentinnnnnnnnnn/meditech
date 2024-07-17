@@ -98,7 +98,7 @@ $db = new Database();
         }
         .container h2 {
             text-align: center;
-            color: #333;
+            color: black;
             margin-bottom: 20px;
         }
         .form-group input[type="text"]:focus,
