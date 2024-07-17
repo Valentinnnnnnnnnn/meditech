@@ -18,7 +18,7 @@ try {
     $type = $_POST['type'];
 
 
-    $db->createProduct(reference, img, prix, quantite, description, fabricant, type);
+    $db->createProduct($reference, $img, $prix, $quantite, $description, $fabricant, $type);
 
     header("Location: products.php?action=create_success");
 } catch (PDOException $e) {

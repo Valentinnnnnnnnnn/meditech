@@ -7,7 +7,8 @@ require "../script.php";
 
 try {
     $db = new Database();
-    $db->deleteProduct($_POST['productId']);
+    $productId = $_POST['productId'];
+    $db->deleteProduct($productId);
     header("Location: products.php?action=delete_success");
 } catch (PDOException $e) {
     header("Location: products.php?action=error");
