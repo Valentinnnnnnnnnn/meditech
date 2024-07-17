@@ -40,7 +40,7 @@ list($produits, $stock, $fabriquants, $types) = $db->getDashboardData();
                 <img src="../imgs/default.jpg">
             </div>
             <div class="info">
-                <span class="count"><?php $produits ?></span>
+                <span class="count"><?php echo $produits ?></span>
                 <span class="label">Produits</span>
             </div>
         </div>
@@ -50,7 +50,7 @@ list($produits, $stock, $fabriquants, $types) = $db->getDashboardData();
                 <img src="../imgs/default.jpg">
             </div>
             <div class="info">
-                <span class="count"><?php $stock ?></span>
+                <span class="count"><?php echo $stock ?></span>
                 <span class="label">En stock</span>
             </div>
         </div>
@@ -60,7 +60,7 @@ list($produits, $stock, $fabriquants, $types) = $db->getDashboardData();
                 <img src="../imgs/default.jpg">
             </div>
             <div class="info">
-                <span class="count"><?php $fabriquants ?></span>
+                <span class="count"><?php echo $fabriquants ?></span>
                 <span class="label">Fabriquants</span>
             </div>
         </div>
@@ -70,7 +70,7 @@ list($produits, $stock, $fabriquants, $types) = $db->getDashboardData();
                 <img src="../imgs/default.jpg">
             </div>
             <div class="info">
-                <span class="count"><?php $types ?>></span>
+                <span class="count"><?php echo $types ?></span>
                 <span class="label">Types</span>
             </div>
         </div>
