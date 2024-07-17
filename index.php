@@ -26,7 +26,7 @@ list($produits, $stock, $fabriquants, $types) = $db->getDashboardData();
                     <span class="line line3"></span>
                 </div>
                 <div class="menu-items">
-                    <li><a href="dashboard.php">Dashboard</a></li>
+                    <li><a href="index.php">Dashboard</a></li>
                     <li><a href="Products/products.php">Products</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </div>

@@ -12,7 +12,7 @@ if (isset($_GET['email']) && isset($_GET['pass'])) {
         $db = new Database();
 
         if ($db->login($email, $pass)) {
-            header('Location: ../Dashboard/dashboard.php');
+            header('Location: ../Dashboard/index.php');
             exit();
         } else {
             // Identifiants invalides
