@@ -18,7 +18,7 @@ Pour développer et exécuter le projet Meditech, il faut disposer de l'environn
     6. Choisir le dossier d'installation (par défaut : C:\\xampp) et cliquer sur "Next"
     7. Lancer XAMPP Control Panel
     8. Démarrer les services Apache et MySQL en cliquant sur les boutons "Start" correspondants
-        ![img.png](img.png)
+        ![img.png](imgs/readme/xampp.png)
   
   - **MariaDB :**
     1. MariaDB est inclus dans XAMPP, il n'y a pas besoin de l'installer séparément
@@ -65,7 +65,7 @@ Pour développer et exécuter le projet Meditech, il faut disposer de l'environn
     - Source CIDR: 0.0.0.0/0
     - Destination Port Range: 80
   - Cliquer sur "Add Ingress Rule" pour ajouter la règle autorisant le trafic entrant sur le port 80
-    ![img_1.png](img_1.png)
+    ![img_1.png](imgs/readme/port80.png)
   - Ouvrir Terminus et créer une nouvelle connexion SSH en cliquant sur "New Host" puis "SSH"
   - Renseigner l'adresse IP publique de l'instance dans le champ "Host"
   - Renseigner le nom d'utilisateur (par défaut : ubuntu)
