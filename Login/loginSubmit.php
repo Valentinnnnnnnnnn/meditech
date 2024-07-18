@@ -11,7 +11,7 @@ if (isset($_GET['email']) && isset($_GET['pass'])) {
     try {
         $db = new Database();
 
-        if ($db->login($email, $pass)) {
+        if ($db->login($email, $pass)) { // Connexion de l'utilisateur
             header('Location: ../index.php');
             exit();
         } else {
