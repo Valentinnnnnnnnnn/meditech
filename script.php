@@ -7,7 +7,7 @@ class Database
     public $db;    // Nom de la base de données
     public $user;  // Nom d'utilisateur pour se connecter à la base de données
     public $pass;  // Mot de passe pour se connecter à la base de données
-    public $charset; // Jeu de caractères utilisé pour la connexion
+    public $charset; // charset utilisé pour la connexion
 
     public $pdo;   // Objet PDO pour la connexion à la base de données
 
@@ -20,7 +20,7 @@ class Database
         $this->pass = getenv('DB_PASS');
         $this->charset = getenv('DB_CHARSET');
 
-        // Construction du DSN (Data Source Name) pour PDO
+        // Construction du DSN pour PDO
         $dsn = "mysql:host={$this->host};dbname={$this->db};charset={$this->charset}";
 
         // Options de configuration pour PDO
@@ -41,7 +41,6 @@ class Database
 
     public function getAllMedicaments()
     {
-        // Sélectionne toutes les colonnes de la table 'medicaments'
         $sql = "SELECT id, reference, img, creation, prix, derniere_modification, quantite FROM medicaments;";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
