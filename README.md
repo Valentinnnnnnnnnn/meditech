@@ -195,3 +195,6 @@ Cependant, il existe des perspectives d'amélioration et d'évolution pour ce pr
 - L'amélioration de la sécurité pour contrer les attaques par force brute, par exemple en limitant le nombre de tentatives de connexion infructueuses ou en implémentant un système de verrouillage temporaire des comptes.
 - L'optimisation de l'architecture des dossiers pour une meilleure organisation et maintenabilité du code source.
 
+### Informations supplémentaires
+- Repo Github : `https://github.com/Valentinnnnnnnnnn/meditech`
+- IP du serveur : `89.168.44.77`
