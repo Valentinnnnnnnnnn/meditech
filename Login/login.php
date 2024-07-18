@@ -137,7 +137,7 @@ color: #5881D0;
     <!-- SE CONNECTER / S'INSCRIRE -->
           <div class="login_register">
               <a class="login" target="blank">Login</a>
-              <a href="../Signup/signup.php" target="blank">Signup</a>
+              <a href="../Signup/signup.php">Signup</a>
           </div>
 
           <!-- FORMULAIRE -->
