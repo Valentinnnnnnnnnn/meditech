@@ -15,7 +15,7 @@
 
     <!-- SE CONNECTER / S'INSCRIRE -->
           <div class="login_register">
-              <a class="login" target="blank">Login</a>
+              <a class="login">Login</a>
               <a href="../Signup/signup.php">Signup</a>
           </div>
 
