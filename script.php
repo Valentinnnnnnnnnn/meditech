@@ -214,5 +214,6 @@ class Database
         return [$result['total_produits'], $result['stock_total'], $result['total_fabricants'], $result['total_types']];
     }
 
+
 }
 

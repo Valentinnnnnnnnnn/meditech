@@ -25,18 +25,7 @@ if (isset($_GET['productId'])) {
 <head>
     <meta charset="UTF-8">
     <title>Détails du Médicament</title>
-    <style>
-        body { font-family: Arial, sans-serif; background-image: url('../imgs/background.jpeg');}
-        .container { width: 50%; margin: 50px auto; padding: 20px;border-radius: 20px; background: #ffffff17; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; font-weight: bold; }
-        .form-group input, .form-group textarea { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-        .form-group textarea { resize: vertical; }
-        .form-buttons-det { margin-top: 20px; text-align: center; }
-        .form-buttons-det form { display: inline-block; }
-        .form-buttons-det button { padding: 10px 20px; margin-right: 10px; cursor: pointer; background: linear-gradient(90deg, #003A74, #006AD5); color: #fff; border: none; border-radius: 8px; transition: background-color 0.3s ease; text-transform: uppercase; font-weight: bold; }
-        img { max-width: 100px; max-height: 100px; }
-    </style>
+    <link rel="stylesheet" href="styles/productDetail.css">
 </head>
 <body>
 
