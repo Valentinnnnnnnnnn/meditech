@@ -144,7 +144,6 @@ body {
     display: none;
 }
 
-/* Styles pour le tableau */
 table.product-table {
     width: 80%;
     margin: 0 auto;
@@ -155,21 +154,18 @@ table.product-table {
     z-index: 1;
 }
 
-/* Styles pour les lignes du tableau */
 tr.product-row {
-    background-color: rgba(221, 221, 221, 0.26);
+    background-color: rgba(255,255,255,0.5);
     cursor: pointer;
 }
 
 
-/* Styles pour les images des produits */
 .product-leftpart img {
     border-radius: 100%;
     margin-right: 10px;
 
 }
 
-/* Styles pour les boutons de quantité */
 .product-quantity button {
     margin: 0 5px;
 }
@@ -182,7 +178,6 @@ button {
     cursor: pointer;
 }
 
-/* Styles pour la partie gauche du produit */
 .product-leftpart {
     width: 50%;
     float: left;
@@ -193,7 +188,6 @@ button {
     position: relative;
 }
 
-/* Styles pour l'image du produit */
 .product-leftpart img {
     float: left;
     border-radius: 16px;
@@ -204,14 +198,12 @@ button {
     overflow: hidden;
 }
 
-/* Styles pour le nom du produit */
 .product-name {
     font-size: 16px;
     font-weight: bold;
     margin: 0;
 }
 
-/* Styles pour le prix */
 .product-price {
     font-size: 14px;
     margin: 5px 0 0;
@@ -231,7 +223,7 @@ button {
     vertical-align: middle;
 }
 
-/* Styles pour la partie droite du produit */
+
 .product-rightpart {
     width: 100%;
     box-sizing: border-box;
@@ -244,7 +236,7 @@ button {
     align-items: center;
 }
 
-/* Styles pour la section des dates */
+
 .product-date {
     flex: 1;
 }
@@ -325,9 +317,8 @@ td {
     border: 1px solid #f5c6cb;
 }
 
-/* Styles pour la ligne d'ajout de produit */
 .add-product-row td {
-    background-color: rgba(221, 221, 221, 0.26); /* Même couleur que les autres lignes */
+    background-color: rgba(255,255,255,0.5);
     border-radius: 16px;
     text-align: center;
     cursor: pointer;
